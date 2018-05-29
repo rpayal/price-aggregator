@@ -1,2 +1,5 @@
-# quotes-aggregator-parent
-Aggregation component for quotes for different instruments and provide services endpoints to receive quotes.
+# price-aggregator
+Aggregation component for price quotes for different instruments from different providers.
+And provide services endpoints to receive quotes.
+
+

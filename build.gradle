@@ -1,0 +1,74 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath(
+                "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id "io.spring.dependency-management" version "1.0.3.RELEASE"
+    id "org.springframework.boot" version "2.0.1.RELEASE"
+}
+
+group 'com.inspiware.price.aggregator'
+version '0.0.1-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-starter-parent:2.0.1.RELEASE"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    reports.html.enabled = false
+}
+
+task testReport(type: TestReport) {
+    destinationDir = file("$buildDir/reports/tests")
+    reportOn test
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-cache"
+    compile "org.springframework.boot:spring-boot-autoconfigure"
+    compile ("org.springframework.boot:spring-boot-starter-web") {
+        exclude module: 'spring-boot-starter-tomcat'
+    }
+    compile "org.springframework:spring-context-support"
+    compile ("org.springframework.boot:spring-boot-configuration-processor") {
+        exclude group: 'com.vaadin.external.google', module: 'android-json'
+    }
+    compile "org.springframework.boot:spring-boot-starter-activemq"
+    compile "org.springframework.integration:spring-integration-jms"
+    compile "org.springframework.integration:spring-integration-amqp"
+    compile "org.apache.activemq:activemq-broker"
+    compile "com.fasterxml.jackson.core:jackson-databind"
+    compile "javax.cache:cache-api"
+    compile "org.ehcache:ehcache"
+    testCompile ("org.springframework.boot:spring-boot-starter-test") {
+        exclude group: 'com.vaadin.external.google', module: 'android-json'
+    }
+    testCompile "javax.servlet:javax.servlet-api:3.1.0"
+    testCompile "junit:junit"
+    testCompile "org.mockito:mockito-core"
+    testCompile "com.mattbertolini:liquibase-slf4j:2.0.0"
+}
+
