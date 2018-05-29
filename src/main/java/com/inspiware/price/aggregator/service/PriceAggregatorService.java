@@ -68,7 +68,6 @@ public class PriceAggregatorService {
 
     // PRIVATE METHODS
 
-
     private void updateVendorCache(InstrumentPrice instrumentPrice) {
         Cache.ValueWrapper vendorCache = cacheManager.getCache(PRICES_BY_VENDOR_CACHE).get(instrumentPrice.getVendor().getId());
         if (vendorCache != null && vendorCache.get() != null) {

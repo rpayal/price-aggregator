@@ -29,6 +29,7 @@ public class JmsConfiguration {
 
     @Autowired
     private ConnectionFactory jmsConnectionFactory;
+
     @Autowired
     private PriceAggregatorService priceAggregatorService;
 

@@ -37,6 +37,10 @@ repositories {
     mavenCentral()
 }
 
+group = 'com.inspiware.price.aggregator'
+version = '0.0.1-SNAPSHOT'
+description = ''
+
 test {
     reports.html.enabled = false
 }
