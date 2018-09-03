@@ -8,17 +8,23 @@ It also caches the prices in a configurable cache. By default it is configured t
 
 Solution also creates a JMS listener container which is responsible to enable JMS listeners endpoints. 
 
-Below is the sequence diagram for the price feed: ![Sequence diagram](others/PriceFeedFlow.png)
+Below is the sequence diagram for the price feed: 
+![Sequence diagram](others/PriceFeedFlow.png)
 
-Price service API client requests to the services are depicted below: ![API Client Requests](others/APIClientRequests.png)
+Price service API client requests to the services are depicted below: 
+![API Client Requests](others/APIClientRequests.png)
 
-Class diagram of the domain models are ![Class diagram](others/DomainClassDiagram.png)
+Class diagram of the domain models are 
+
+![Class diagram](others/DomainClassDiagram.png)
 
 
 ## How to run
 To run the project locally, use the command:
 
- ```./gradlew bootRun```
+ ```
+ ./gradlew bootRun
+ ```
 
 It will start the REST services, start an in-memory ActiveMQ broker and also start the Spring integration flows, 
 initialize input/output channels.
