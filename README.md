@@ -18,7 +18,7 @@ Class diagram of the domain models are ![Class diagram](others/DomainClassDiagra
 ## How to run
 To run the project locally, use the command:
 
-** ./gradlew bootRun**
+ ```./gradlew bootRun```
 
 It will start the REST services, start an in-memory ActiveMQ broker and also start the Spring integration flows, 
 initialize input/output channels.
