@@ -40,7 +40,9 @@ Prices can be created using either JMS messages or REST api calls.
 
 **2** Using the REST service endpoint /prices, a POST operation with a JSON string payload.
 
+```json
 [{"instrument":{"id":10001,"symbol":"AAPL","name":"Apple Inc","currency":"$"},"vendor":{"id":10003,"name":"Vendor3"},"bid":166.26,"ask":170.78,"created":"2018-05-28T15:45:19.291+0000"}]
+```
 
 ## Price Fetching
 
